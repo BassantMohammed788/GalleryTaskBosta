@@ -1,0 +1,7 @@
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/imageViewGalleryItem"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@drawable/album_icon"
+    android:scaleType="centerCrop"
+    android:adjustViewBounds="true"/>
