@@ -1,5 +1,6 @@
 package com.example.gallerytaskboosta.ui.photo.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -29,7 +30,7 @@ class PhotoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val id = args.photoId
+        val name = args.photoName
         val url = args.photoUrl
 
         Glide.with(requireContext())
@@ -37,5 +38,19 @@ class PhotoFragment : Fragment() {
             .error(R.drawable.image_error)
             .placeholder(R.drawable.loading_img)
             .into(binding.imageView)
+
+        binding.imageTitle.text=name
+        binding.shareBtn.setOnClickListener {
+            shareImageLink(url)
+        }
+    }
+
+    private fun shareImageLink(url: String) {
+        val shareIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, url)
+            type = "text/plain"
+        }
+        startActivity(Intent.createChooser(shareIntent, "Share via"))
     }
 }

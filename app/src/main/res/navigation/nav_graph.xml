@@ -32,7 +32,7 @@
         android:label="fragment_photo"
         tools:layout="@layout/fragment_photo" >
         <argument
-            android:name="photoId"
+            android:name="photoName"
             app:argType="string" />
         <argument
             android:name="photoUrl"

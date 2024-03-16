@@ -92,7 +92,7 @@ class AlbumPhotosFragment : Fragment() {
     }
 
     private val albumListener = { photo: Photo ->
-        val action = AlbumPhotosFragmentDirections.actionAlbumPhotosFragmentToPhotoFragment(photo.id.toString(),photo.thumbnailUrl!!)
+        val action = AlbumPhotosFragmentDirections.actionAlbumPhotosFragmentToPhotoFragment(photo.title.toString(),photo.thumbnailUrl!!)
         findNavController().navigate(action)
 
     }
